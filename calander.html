@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>calander</title>
+</head>
+<body>
+  
+
+
+<h1 class="here">Place your availability on the calander below on open days! We will email or text you with confirmations!</h1>
+
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+
+
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
+<div id="calendar"></div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      initialView: 'dayGridMonth', // month view
+      headerToolbar: {
+        left: 'prev,next today',
+        center: 'title',
+        right: 'dayGridMonth,timeGridWeek,timeGridDay'
+      },
+      events: [
+        // sample events
+        { title: 'Event 1', date: '2025-11-20' },
+        { title: 'Event 2', date: '2025-11-22' }
+      ]
+    });
+
+    calendar.render();
+  });
+</script>
+
+<section class="contact-info">
+  <h2>Contact Me</h2>
+  <ul>
+    <li>📞 Phone: (513)-903-7613</li>
+    <li>✉️ Email: <a href="mailto:kai.matthias2006@gmail.com">kai.matthias2006@gmail.com</a></li>
+  </ul>
+</section>
+
+<div class="bottom-menu">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="calander.html">Calander</a></li>
+    <li><a href="examples.html">Example Photography</a></li>
+  </ul>
+</div>
+
+</body>
+</html>
