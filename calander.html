@@ -19,27 +19,45 @@
 
 <div id="calendar"></div>
 
-<script>
+
+  <script>
   document.addEventListener('DOMContentLoaded', function() {
     var calendarEl = document.getElementById('calendar');
 
     var calendar = new FullCalendar.Calendar(calendarEl, {
-      initialView: 'dayGridMonth', // month view
+      initialView: 'dayGridMonth',
       headerToolbar: {
         left: 'prev,next today',
         center: 'title',
         right: 'dayGridMonth,timeGridWeek,timeGridDay'
       },
-      events: [
-        // sample events
-        { title: 'Event 1', date: '2025-11-20' },
-        { title: 'Event 2', date: '2025-11-22' }
-      ]
+
+      selectable: true,             
+      selectMirror: true,
+      select: function(info) {
+        
+        var text = prompt("Enter your availability:");
+
+        if (text) {
+          calendar.addEvent({
+            title: text,
+            start: info.startStr,
+            allDay: true
+          });
+        }
+
+        calendar.unselect();
+      },
+
+      editable: true,                
+      events: []                     
     });
 
     calendar.render();
   });
 </script>
+
+
 
 <section class="contact-info">
   <h2>Contact Me</h2>
@@ -54,6 +72,8 @@
     <li><a href="index.html">Home</a></li>
     <li><a href="calander.html">Calander</a></li>
     <li><a href="examples.html">Example Photography</a></li>
+    <li><a href="about.html">About Me</a></li>
+  </ul>
   </ul>
 </div>
 
